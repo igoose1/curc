@@ -1,4 +1,4 @@
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 __doc__ = """curc is a currency converter.
 
 curc loads rates from ECB.

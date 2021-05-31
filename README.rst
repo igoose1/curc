@@ -16,11 +16,7 @@ Example::
 
     curc 150 usd eur
 
-Use "``curc --help``" for that information.
-
-Use "``curc --list``" to print possible currencies.
-
-Set "``SCRIPTING``" environment variable to print raw result.
+Use "``curc --help``" for more information.
 
 More:
 

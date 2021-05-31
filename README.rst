@@ -2,6 +2,9 @@
 curc
 ====
 
+.. image:: https://badge.fury.io/py/curc.svg
+    :target: https://badge.fury.io/py/curc
+
 curc is a currency converter.
 
 Install::

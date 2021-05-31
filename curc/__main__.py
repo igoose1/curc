@@ -12,23 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-"""curc is a currency converter.
-
-curc loads rates from ECB.
-
-Usage:
-
-    curc <amount> <from> <to>
-
-Example:
-
-    curc 150 USD EUR
-
-Use "curc --help" for that information.
-Use "curc --list" to print possible currencies.
-Set "SCRIPTING" environment variable to print raw result."""
-
 from typing import Optional, List, Dict
 import os
 import sys
@@ -41,6 +24,8 @@ import enum
 from xml.parsers.expat import ExpatError
 import requests
 import xmltodict
+
+from . import __version__, __doc__
 
 URL = f"https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml?{uuid.uuid4()}"
 FILE_PREFIX = "curc_"

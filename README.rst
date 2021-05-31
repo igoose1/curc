@@ -1,3 +1,5 @@
+.. image:: img/curc.png
+
 ====
 curc
 ====

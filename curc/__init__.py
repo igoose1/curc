@@ -1,4 +1,4 @@
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __doc__ = """curc is a currency converter.
 
 curc loads rates from ECB.
@@ -9,7 +9,7 @@ Usage:
 
 Example:
 
-    curc 150 USD EUR
+    curc 150 usd eur
 
 Use "curc --help" for that information.
 Use "curc --list" to print possible currencies.

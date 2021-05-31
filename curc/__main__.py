@@ -114,7 +114,7 @@ def main() -> Exit:
     return Exit.OK
 
 
-if __name__ == "__main__":
+def console():
     exit_code = main()
     if exit_code == Exit.GETERROR:
         print("Cannot get response from ECB.", file=sys.stderr)
@@ -129,3 +129,7 @@ if __name__ == "__main__":
         print(file=sys.stderr)
         print(__doc__, file=sys.stderr)
     sys.exit(int(exit_code))
+
+
+if __name__ == "__main__":
+    console()

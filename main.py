@@ -27,8 +27,7 @@ Example:
 
 Use "curc --help" for that information.
 Use "curc --list" to print possible currencies.
-Set "SCRIPTING" environment variable to print raw result.
-"""
+Set "SCRIPTING" environment variable to print raw result."""
 
 from typing import Optional, List, Dict
 import os
@@ -105,7 +104,7 @@ def main() -> Exit:
     with open(which_file(today), "w") as file:
         file.write(string_xml)
 
-    if "--help" in sys.argv[1:]:
+    if "--help" in sys.argv[1:] or not sys.argv[1:]:
         print(__doc__, file=sys.stderr)
         return Exit.OK
 

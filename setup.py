@@ -2,16 +2,17 @@ from setuptools import setup
 
 import curc
 
-readme = curc.__doc__
 version = curc.__version__
 with open("requirements.txt", "r") as file:
     requires = [line.strip() for line in file.readlines()]
+with open("README.rst", "r") as file:
+    readme = file.read()
 
 setup(
     name="curc",
     version=version,
     long_description=readme,
-    long_description_content_type="text/plain",
+    long_description_content_type="text/x-rst",
     author="Oskar Sharipov",
     author_email="oskarsh@riseup.net",
     license="Apache License Version 2.0",

@@ -24,6 +24,7 @@ setup(
         "Environment :: Console",
         "Topic :: Office/Business :: Financial",
     ],
+    packages=["curc"],
     install_requires=requires,
     python_requires=">=3.7",
     entry_points={"console_scripts": ["curc = curc.__main__:console"]},

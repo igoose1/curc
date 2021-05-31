@@ -15,13 +15,15 @@
 
 """curc is a currency converter.
 
+curc loads rates from ECB.
+
 Usage:
 
     curc <amount> <from> <to>
 
 Example:
 
-    curc 156 USD EUR
+    curc 150 USD EUR
 
 Use "curc --help" for that information.
 Use "curc --list" to print possible currencies.
@@ -35,7 +37,6 @@ import datetime
 import uuid
 import pathlib
 import tempfile
-import logging
 import enum
 
 from xml.parsers.expat import ExpatError
@@ -132,13 +133,15 @@ def main() -> Exit:
 if __name__ == "__main__":
     exit_code = main()
     if exit_code == Exit.GETERROR:
-        logging.error("cannot get response from ECB.")
+        print("Cannot get response from ECB.", file=sys.stderr)
     elif exit_code == Exit.PARSEERROR:
-        logging.error("cannot parse response from ECB.")
+        print("Cannot parse response from ECB.", file=sys.stderr)
     elif exit_code == Exit.EXTRACTERROR:
-        logging.error("cannot extract rates from ECB response.")
+        print("Cannot extract rates from ECB response.", file=sys.stderr)
     elif exit_code == Exit.INPUTERROR:
-        logging.error("cannot parse user arguments.")
-    elif int(exit_code) > 0:
-        logging.error("something went wrong")
+        print("Cannot parse user arguments.", file=sys.stderr)
+
+    if int(exit_code) > 0:
+        print(file=sys.stderr)
+        print(__doc__, file=sys.stderr)
     sys.exit(int(exit_code))

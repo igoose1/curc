@@ -1,4 +1,4 @@
-.. image:: img/curc.png
+.. image:: https://raw.githubusercontent.com/igoose1/curc/master/img/curc.png
 
 ====
 curc

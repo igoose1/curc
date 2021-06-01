@@ -9,7 +9,7 @@ curc
 
 curc is a currency converter.
 
-Install::
+Installation::
 
     python -m pip install curc
 

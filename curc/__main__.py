@@ -126,10 +126,6 @@ def console():
     elif exit_code == Exit.EXTRACTERROR:
         print("Cannot extract rates from ECB response.", file=sys.stderr)
     elif exit_code == Exit.INPUTERROR:
-        print("Cannot parse user arguments.", file=sys.stderr)
-
-    if int(exit_code) > 0:
-        print(file=sys.stderr)
         print(__doc__, file=sys.stderr)
     sys.exit(int(exit_code))
 

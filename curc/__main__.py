@@ -44,7 +44,10 @@ def load() -> Optional[str]:
     if which_file(today).is_file():
         with open(which_file(today), "r") as file:
             return file.read()
-    response = requests.get(URL)
+    try:
+        response = requests.get(URL)
+    except requests.exceptions.ConnectionError:
+        return None
     if response.ok:
         return response.text
     return None

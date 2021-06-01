@@ -60,6 +60,7 @@ def extract(currencies: List[Dict[str, str]]) -> Optional[Dict[str, float]]:
             result[element["@currency"].upper()] = float(element["@rate"])
         except KeyError:
             return None
+    result["EUR"] = 1.0
     return result
 
 

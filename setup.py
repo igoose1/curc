@@ -16,7 +16,7 @@ setup(
     author="Oskar Sharipov",
     author_email="oskarsh@riseup.net",
     license="Apache License Version 2.0",
-    license_files=["license"],
+    license_files=["LICENSE"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: Apache Software License",

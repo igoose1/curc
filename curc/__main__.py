@@ -111,9 +111,9 @@ def main() -> Exit:
         return Exit.INPUTERROR
     result = amount / currencies[_from] * currencies[to]
     if os.getenv("SCRIPTING") is None:
-        print(f"{amount:.2f} {_from} = {result:.2f} {to}\t({today})")
+        print(f"{amount:,.2f} {_from} = {result:,.2f} {to}\t(on {today})")
     else:
-        print(f"{result:.2f}")
+        print(f"{result:,.2f}")
 
     return Exit.OK
 

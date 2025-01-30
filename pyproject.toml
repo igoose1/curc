@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "curc"
+dependencies = [
+    "requests>=2.32.3",
+    "xmltodict>=0.14.2",
+]
+requires-python = ">=3.9"
+authors = [
+	{name = "Oskar Sharipov", email = "oskargit@riseup.net" },
+]
+description = "curc is a currency converter."
+readme = "README.rst"
+dynamic = ["version"]
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+keywords = ["currency", "currency rate", "currenc converter"]
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"License :: OSI Approved :: Apache Software License",
+	"Operating System :: OS Independent",
+	"Environment :: Console",
+	"Topic :: Office/Business :: Financial",
+]
+
+[project.urls]
+Repository = "https://github.com/igoose1/curc"
+
+[project.scripts]
+curc = "curc.__main__:console"
+
+[tool.uv.pip]
+require-hashes = true
+
+[tool.hatch.version]
+path = "curc/__init__.py"

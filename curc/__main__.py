@@ -25,7 +25,7 @@ from xml.parsers.expat import ExpatError
 import requests
 import xmltodict
 
-from . import __version__, __doc__
+from curc import __version__, __doc__
 
 URL = f"https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml?{uuid.uuid4()}"
 FILE_PREFIX = f"curc_v{__version__}_"

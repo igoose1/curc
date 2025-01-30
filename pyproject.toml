@@ -38,6 +38,10 @@ require-hashes = true
 [tool.hatch.version]
 path = "curc/__init__.py"
 
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["D", "A", "DTZ", "PLR", "PGH", "T"]
+
 [dependency-groups]
 dev = [
     "pre-commit>=4.1.0",

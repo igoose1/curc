@@ -12,19 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
-import sys
 import datetime
-import uuid
-import pathlib
-import tempfile
 import enum
-
+import os
+import pathlib
+import sys
+import tempfile
+import uuid
 from xml.parsers.expat import ExpatError
+
 import httpx
 import xmltodict
 
-from curc import __version__, __doc__
+from curc import __doc__, __version__
 
 URL = f"https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml?{uuid.uuid4()}"
 FILE_PREFIX = f"curc_v{__version__}_"
@@ -35,13 +35,12 @@ today = datetime.date.today().strftime("%Y-%m-%d")
 
 
 def which_file(date: str) -> pathlib.Path:
-    path = pathlib.Path(tempfile.gettempdir()) / (FILE_PREFIX + date)
-    return path
+    return pathlib.Path(tempfile.gettempdir()) / (FILE_PREFIX + date)
 
 
 def load() -> str | None:
     if which_file(today).is_file():
-        with open(which_file(today), "r") as file:
+        with which_file(today).open() as file:
             return file.read()
     try:
         response = httpx.get(URL)
@@ -89,7 +88,7 @@ def main() -> Exit:
     currencies = extract(current)
     if currencies is None:
         return Exit.EXTRACTERROR
-    with open(which_file(today), "w") as file:
+    with which_file(today).open("w") as file:
         file.write(string_xml)
 
     if "--help" in sys.argv[1:] or not sys.argv[1:]:
@@ -117,7 +116,7 @@ def main() -> Exit:
     return Exit.OK
 
 
-def console():
+def console() -> None:
     exit_code = main()
     if exit_code == Exit.GETERROR:
         print("Cannot get response from ECB.", file=sys.stderr)

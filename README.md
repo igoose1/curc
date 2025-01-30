@@ -10,7 +10,7 @@ Usage:
 
     curc <amount> <from> <to>
 
-Invoke directly with uvx:
+Invoke directly with [uvx][uvx]:
 
     uvx curc 150 usd eur
 
@@ -20,5 +20,8 @@ Or install with pip:
 
 More:
 
--   curc loads rates from ECB.
+-   curc loads rates from [ECB][ECB].
 -   rates are downloaded once a day and cached in /tmp.
+
+[uvx]: https://docs.astral.sh/uv/
+[ECB]: https://www.ecb.europa.eu/

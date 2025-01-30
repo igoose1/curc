@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from typing import Optional, List, Dict
 import os
 import sys
 import datetime
@@ -40,7 +39,7 @@ def which_file(date: str) -> pathlib.Path:
     return path
 
 
-def load() -> Optional[str]:
+def load() -> str | None:
     if which_file(today).is_file():
         with open(which_file(today), "r") as file:
             return file.read()
@@ -53,7 +52,7 @@ def load() -> Optional[str]:
     return None
 
 
-def extract(currencies: List[Dict[str, str]]) -> Optional[Dict[str, float]]:
+def extract(currencies: list[dict[str, str]]) -> dict[str, float] | None:
     result = {}
     for element in currencies:
         try:

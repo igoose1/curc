@@ -13,7 +13,7 @@ authors = [
 	{name = "Oskar Sharipov", email = "oskargit@riseup.net" },
 ]
 description = "curc is a currency converter."
-readme = "README.rst"
+readme = "README.md"
 dynamic = ["version"]
 license = "Apache-2.0"
 license-files = ["LICENSE"]

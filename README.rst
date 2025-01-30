@@ -9,26 +9,20 @@ curc
 
 curc is a currency converter.
 
-Installation::
-
-    python -m pip install curc
-
 Usage::
 
     curc <amount> <from> <to>
 
-Example::
+Invoke directly with uvx::
 
-    curc 150 usd eur
+    uvx curc 150 usd eur
 
-Use "``curc --help``" for more information.
+Or install with pip::
+
+    pip install curc
 
 More:
 
 - curc loads rates from ECB.
 
-- rates are downloaded just once a day and cached.
-
-- curc was written as everything sucks in response time.
-
-- yes, I know Python sucks too if I want performance in CLI-applications.
+- rates are downloaded once a day and cached in /tmp.

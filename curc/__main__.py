@@ -21,7 +21,7 @@ import tempfile
 import enum
 
 from xml.parsers.expat import ExpatError
-import requests
+import httpx
 import xmltodict
 
 from curc import __version__, __doc__
@@ -44,10 +44,10 @@ def load() -> str | None:
         with open(which_file(today), "r") as file:
             return file.read()
     try:
-        response = requests.get(URL)
-    except requests.exceptions.ConnectionError:
+        response = httpx.get(URL)
+    except httpx.ConnectError:
         return None
-    if response.ok:
+    if response.status_code == httpx.codes.OK:
         return response.text
     return None
 

@@ -76,7 +76,7 @@ def main() -> Exit:
     if string_xml is None:
         return Exit.GETERROR
     try:
-        doc = xmltodict.parse(string_xml)
+        doc: list[dict[str, str]] = xmltodict.parse(string_xml)  # type: ignore
     except ExpatError:
         return Exit.PARSEERROR
 
